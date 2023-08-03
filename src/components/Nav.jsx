@@ -1,4 +1,3 @@
-// Nav.jsx
 import "../index.css";
 
 function Nav() {

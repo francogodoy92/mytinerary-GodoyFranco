@@ -1,5 +1,5 @@
-// Header.jsx
 import Nav from "./Nav";
+
 import "../index.css";
 
 function Header() {
