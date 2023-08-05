@@ -1,3 +1,4 @@
+import React from 'react';
 import "../index.css";
 
 function Nav() {
@@ -11,7 +12,7 @@ function Nav() {
         </li>
         <li>
           <a
-            href="#"
+            href="../pages/Cities.jsx"
             className="bg-gray-800 text-white rounded border border-gray-800 px-4 py-1 hover:bg-white hover:text-blue-700 font-medium"
           >
             Cities
