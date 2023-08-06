@@ -1,16 +1,15 @@
 import React from 'react';
 import "../index.css";
-import Header from "../components/Header";
 import Hero from "../components/Hero";
-import Footer from "../components/Footer";
+import Header from "../components/Header"
+
 
 function Home() {
   return (
     <>
       <div>
-        <Header />
+        <Header/>
         <Hero />        
-        <Footer /> 
       </div>
     </>
   )
