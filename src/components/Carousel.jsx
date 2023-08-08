@@ -54,7 +54,7 @@ function Carousel() {
                   <img
                     className="w-full h-full object-cover"
                     src={city.photo}
-                    title={city.city}
+                    title={city.featuredLocation}
                     alt={city.city}
                   />
                 </div>
