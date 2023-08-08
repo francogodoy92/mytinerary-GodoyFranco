@@ -1,15 +1,15 @@
 import React from "react";
 import "../index.css";
 
-function ArrowL({ onClick, item } ) {
+function Arrow({ onClick, item }) {
   return (
     <div
-      
+      className="flex items-center text-2xl md:text-6xl font-extrabold text-blue-950 hover:drop-shadow-lg rounded-lg active:text-5xl active:ease-in-out hover:ease-in-out hover:text-blue-700 duration-300 active:text-white cursor-pointer "
       onClick={onClick}
     >
-      <p className="flex items-center text-3xl md:text-6xl font-extrabold text-black cursor-pointer">{item}</p>
+      {item}
     </div>
   );
 }
 
-export default ArrowL;
+export default Arrow;
