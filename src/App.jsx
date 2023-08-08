@@ -1,17 +1,24 @@
-import React from 'react';
-import "./index.css";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
-import Cities from "./pages/Cities"
+import Cities from "./pages/Cities";
+import Main from "./layouts/Main";
+import Componente404 from "./pages/Componente404";
 
-function App() {
+const router = createBrowserRouter([
+  {
+    path:'/',
+    element: <Main />,
+    children: [
+      {path:'/', element: <Home /> },
+      {path:'/Home', element: <Home /> },
+      {path:'/Cities', element: <Cities />}
+    ]
+  },
+  {path:'*', element: <Componente404 /> }
+])
+
+export default function App() {
   return (
-    <>
-      <div>
-        <Home />
-      </div>
-    </>
-  );
+    <RouterProvider router={router} />
+  )
 }
-
-export default App;
-

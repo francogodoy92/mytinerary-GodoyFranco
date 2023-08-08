@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
- import '../index.css';
+import '../index.css';
+import {Link, NavLink} from 'react-router-dom';
 
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,34 +28,34 @@ function Nav() {
           }}
         >
           <li>
-            <a
-              href="#"
+            <Link
+              to="/Home"
               className={`${
                 isMenuOpen ? 'bg-gray-400 text-gray-900 text-lg border-b-2' : 'text-white'
               }  rounded px-4 py-1 hover:text-blue-700 font-medium`}
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/Cities"
               className={`${
                 isMenuOpen ? 'bg-gray-400 text-gray-900 text-lg border-b-2' : 'text-white'
               }  rounded px-4 py-1 hover:text-blue-700 font-medium`}
             >
               Cities
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/Login"
               className={`${
                 isMenuOpen ? 'bg-gray-400 text-blue-900 text-lg' : 'text-white'
               }  rounded px-4 py-1 hover:text-blue-700 font-medium`}
             >
               Login
-            </a>
+            </Link>
           </li>
         </ol>
       </div>
@@ -63,4 +64,3 @@ function Nav() {
 }
 
 export default Nav; 
- 

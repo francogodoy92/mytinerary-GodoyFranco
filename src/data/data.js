@@ -144,32 +144,7 @@ const data = {
         "capacity":130000,
         "assistance":90000,
         "price":100
-      },
-      {
-        _id: 13,
-        "image":"https://i.postimg.cc/vH52y81C/cinema4.jpg",
-        "name":"Batman",
-        "date":"2021-3-11",
-        "description":"Come see Batman fight crime in Gotham City.",
-        "category":"Cinema",
-        "place":"Room D1",
-        "capacity":11000,
-        "assistance":9300,
-        "price":225
-      },
-      {
-        _id: 14,
-        "image":"https://i.postimg.cc/T3C92KTN/scale.jpg",
-        "name":"Avengers",
-        "date":"2022-10-15",
-        "description":"Marvel's Avengers Premier in 3d, the start of an epic saga with your favourite superheroes.",
-        "category":"Cinema",
-        "place":"Room D1",
-        "capacity":9000,
-        "estimate":9000,
-        "price":250
       }
     ]
   }
-
-  export default data
+export default data
