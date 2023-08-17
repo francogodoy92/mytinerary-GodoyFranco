@@ -1,5 +1,6 @@
 const cities15 = [
   {
+    _id: 1,
     country: "Cambodia",
     fundation: "1113-01-01",
     population: 120000,
@@ -11,7 +12,8 @@ const cities15 = [
       "Cambodia is a small country that offers various delights, from cuisine to sights, you can't never get enough..  In the photo Angkor Wats temple complex.",
     featuredLocation: "Angkor Wats Temple Complex",
   },
-  {
+  { 
+    _id: 2,
     country: "Indonesia",
     fundation: "1945-08-17",
     population: 4230051,
@@ -23,7 +25,8 @@ const cities15 = [
       "Famous for its volcanic mountains, iconic beaches and coral reefs, Indonesia's resort island of Bali is a must visit place. The Water Temple is featured.",
     featuredLocation: "Temple of Water",
   },
-  {
+  { 
+    _id: 3,
     country: "Tahiti",
     fundation: "1722-01-01",
     population: 10605,
@@ -35,7 +38,8 @@ const cities15 = [
       "This south pacific island could easily be defined as the center of the romantic universe, where luxury, beach resorts, and spas dot the island with overwater bungalows, thatched-roof villas, and a fabled ambiance. Simply put, Bora Bora is one of the most beautiful islands in the world.",
     featuredLocation: "Matira Beach",
   },
-  {
+  { 
+    _id: 4,
     country: "Venezuela",
     fundation: "1764-05-22",
     population: 407452,
@@ -47,7 +51,8 @@ const cities15 = [
       "Canaima National Park is the gateway to Angel Falls. Although other waterfalls and lagoons can be visited from Canaima camp, the main reason tourists fly here is for the trips to the base of Angel Falls, which are featured in the photo above.",
     featuredLocation: "Angel Falls",
   },
-  {
+  { 
+    _id: 5,
     country: "Japan",
     fundation: "1952-01-01",
     population: 104000000,
@@ -59,7 +64,8 @@ const cities15 = [
       "Mount Fuji is open for climbing only in summer, the climb is a easy hike up, so you only need good shoes, water, and warm clothes (even in summer it gets very cold at the summit at sunrise).",
     featuredLocation: "Mount Fuji",
   },
-  {
+  { 
+    _id: 6,
     country: "Maldives Republic",
     fundation: "1965-07-26",
     population: 540542,
@@ -71,7 +77,8 @@ const cities15 = [
       "The Maldives has one of the most delicate environments anywhere on the planet. Coral reefs are the foundation of the islands. While several marine species and birds are protected by law, protected areas have been designated to ensure the conservation of specific ecosystems and the rich biodiversity of the country.",
     featuredLocation: "Paradise Island Resort Maldives",
   },
-  {
+  { 
+    _id: 7,
     country: "Argentina",
     fundation: "1927-12-07",
     population: 6143,
@@ -83,7 +90,8 @@ const cities15 = [
       "The beautiful City of El Calafate is the access to the fascinating world of Los Glaciares National Park. The calving of the Perito Moreno and the possibility to sail close to it in order to watch its walls from a close distance, or walk on it by hiring a hiking tour have lured visitors from all over the world.",
     featuredLocation: "Los Glaciares National Park",
   },
-  {
+  { 
+    _id: 8,
     country: "Australia",
     fundation: "1788-01-26",
     population: 5312000,
@@ -95,7 +103,8 @@ const cities15 = [
       "The Sydney Opera House is one of the most distinctive and famous 20th-century buildings, and one of the most famous performing arts venues in the world. Situated on Bennelong Point in Sydney Harbour, with parkland to its south and close to the equally famous Sydney Harbour Bridge, the building and its surroundings form an iconic Australian image.",
     featuredLocation: "Opera Theater",
   },
-  {
+  { 
+    _id: 9,
     country: "Mexico",
     fundation: "1325-06-20",
     population: 212500,
@@ -107,7 +116,8 @@ const cities15 = [
       "Modern Mexico City is built atop the sinking lake and ruins that once formed part of the Aztec Empire's principal city; Tenochtitlán.",
     featuredLocation: "Piramid Complex",
   },
-  {
+  { 
+    _id: 10,
     country: "Chile",
     fundation: "1928-01-01",
     population: 165593,
@@ -120,7 +130,8 @@ const cities15 = [
       "Torres del Paine National Park is a large park in the Magallanes province of in Chile that encompasses glaciers, rivers, and lakes in the southern part of the Chilean Patagonia.",
     featuredLocation: "Towers of Paine",
   },
-  {
+  { 
+    _id: 11,
     country: "Africa",
     fundation: "1964-10-24",
     population: 19473125,
@@ -132,7 +143,8 @@ const cities15 = [
       "The Victoria falls are considered one of the top ten wonders of the world and are a UNESCO World Heritage Site. They act as a barrier that divides the upper and lower sections of river Zambezi which itself remains in a 'no man's land'.",
     featuredLocation: "Victoria Falls",
   },
-  {
+  { 
+    _id: 12,
     country: "Egypt",
     fundation: "0969-01-01",
     population: 9540000,
@@ -144,7 +156,8 @@ const cities15 = [
       "Visiting the Cairo Citadel is one of the best things to do around the area of Islamic Cairo",
     featuredLocation: "Salah Al Din",
   },
-  {
+  { 
+    _id: 13,
     country: "Argentina",
     foundation: "1536-02-02",
     population: 4890151,
@@ -155,6 +168,7 @@ const cities15 = [
     featuredLocation: "Casa Rosada"
  },
  {
+  _id: 14,
   country: "Colombia",
   foundation: "1616-03-03",
   population: 2496301,
@@ -164,7 +178,8 @@ const cities15 = [
   smalldescription: "Medellín, the charming city surrounded by mountains, has been reborn as a center of creativity and progress in Colombia.",
   featuredLocation: "Arví Park"
 },
-{
+{ 
+  _id: 15,
   country: "Venezuela",
   foundation: "1567-07-25",
   population: 2822255,

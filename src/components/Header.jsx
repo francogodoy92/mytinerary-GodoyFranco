@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="relative top-0 w-full flex justify-between p-2 h-[5vh] bg-blue-950 items-center z-10 shadow-lg">
+    <header className="relative top-0 w-full flex justify-between p-2 h-[8vh] bg-blue-950 items-center z-10 shadow-lg">
       <Link
         to="/Home"
         className="flex gap-3 items-center justify-center cursor-pointer"
