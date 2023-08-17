@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Outlet } from "react-router-dom";
 import backgroundImage from '../../public/bg.png';
+import "../index.css"
 
 const Main = () => {
   return (

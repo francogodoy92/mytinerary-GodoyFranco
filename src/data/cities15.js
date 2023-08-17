@@ -1,4 +1,4 @@
-const cities = [
+const cities15 = [
   {
     country: "Cambodia",
     fundation: "1113-01-01",
@@ -177,4 +177,4 @@ const cities = [
 
 ];
 
-export default cities;
+export default cities15;

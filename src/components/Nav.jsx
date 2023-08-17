@@ -11,9 +11,9 @@ function Nav() {
 
   return (
     <nav>
-      <div className="relative px-4 py-2 md:p-0">
+      <div className="relative px-4 py-2 md:p-0 ">
         <button
-          className="md:hidden text-blue-950 bg-blue-500 rounded-md px-4 py-1 hover:text-blue-700 font-bold text-2xl"
+          className="md:hidden text-blue-950 bg-blue-500 rounded-md px-4 py-1 hover:text-blue-700 font-bold text-2xl ml-10"
           onClick={toggleMenu}
         >
           ☰
