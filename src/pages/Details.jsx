@@ -20,7 +20,11 @@ function Details() {
   }, []);
 
   if (!data) {
-    return <div>Loading...</div>;
+    return <div className="min-h-[85vh] flex flex-col items-center">
+      <p className="text-3xl text-center font-bold mt-10">
+          Loading your details...
+        </p>
+    </div>;
   }
 
   const city = data.response.find((city) => city._id.toString() === id.toString());
