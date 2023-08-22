@@ -54,7 +54,7 @@ function Cities() {
         type="text"
         placeholder="Search your city!"
         className="mb-10 px-2 py-1 border border-gray-300 shadow-sm rounded-md focus:outline-none w-auto focus:border-blue-400"
-        value={searchTerm}
+        value= {searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
       <div className="flex justify-evenly w-screen items-center">
