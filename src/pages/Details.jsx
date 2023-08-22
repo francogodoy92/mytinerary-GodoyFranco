@@ -13,7 +13,7 @@ function Details() {
         const fetchedData = await fetchCities();
         setData(fetchedData);
       } catch (error) {
-        console.error("Error loading cities:", error);
+        console.error("Error loading your cities:", error);
       }
     }
     fetchData();
