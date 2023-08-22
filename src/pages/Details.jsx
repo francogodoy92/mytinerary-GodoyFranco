@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 function Details() {
   const { id } = useParams();
   const [data, setData] = useState(null);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -13,7 +14,7 @@ function Details() {
         const fetchedData = await fetchCities();
         setData(fetchedData);
       } catch (error) {
-        console.error("Error loading your cities:", error);
+        console.error("Error loading cities:", error);
       }
     }
     fetchData();
@@ -22,7 +23,7 @@ function Details() {
   if (!data) {
     return <div className="min-h-[85vh] flex flex-col items-center">
       <p className="text-3xl text-center font-bold mt-10">
-          Loading your details...
+          Loading...
         </p>
     </div>;
   }
@@ -33,6 +34,10 @@ function Details() {
     return <div>City not found</div>;
   }
 
+  const toggleImage = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
     <div className="min-h-[85vh]  px-20 py-5">
       <div className="flex flex-col gap-3 items-center">
@@ -40,18 +45,19 @@ function Details() {
           {city.city}, {city.country}
         </p>
         <img
-          className="h-80 w-[30vw] object-cover rounded-lg shadow-2xl"
+          className={`h-${isExpanded ? 'full' : '80'} w-${isExpanded ? 'full' : '[30vw]'} object-${isExpanded ? 'contain' : 'fill'} rounded-lg shadow-2xl border-4 border-blue-950 cursor-pointer`}
           src={city.photo}
           title={city.featuredLocation}
           alt={city.city}
+          onClick={toggleImage}
         />
         <p className="text-3xl text-center py-5">🛠️Under construction🛠️</p>
       </div>
-        <Link to="/Cities" className="flex items-end justify-end">
-          <p className="text-blue-200 bg-blue-950 text-center py-1 px-2 rounded-md hover:bg-blue-100 border border-blue-950 hover:text-blue-950 hover:shadow-lg w-auto text-lg">
-            Back to Cities 🡆
-          </p>
-        </Link>
+      <Link to="/Cities" className="flex items-end justify-end">
+        <p className="text-blue-200 bg-blue-950 text-center py-1 px-2 rounded-md hover:bg-blue-100 border border-blue-950 hover:text-blue-950 hover:shadow-lg w-auto text-lg">
+          Back to Cities 🡆
+        </p>
+      </Link>
     </div>
   );
 }
