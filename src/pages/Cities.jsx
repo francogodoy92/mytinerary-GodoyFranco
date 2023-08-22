@@ -67,12 +67,12 @@ function Cities() {
                 className="rounded-md shadow-lg shadow-blue-950 overflow-hidden border-2 border-t-blue-950 border-r-blue-700 border-b-blue-500 border-l-blue-300"
               >
                 <img
-                  className="w-80 h-60 object-cover"
+                  className="w-80 h-60 object-fill"
                   src={city.photo}
                   title={city.featuredLocation}
                   alt={city.city}
                 />
-                <p className="text-right px-2 py-1 text-sm text-blue-400 bg-blue-950 hidden md:block">
+                <p className="text-right px-2 py-1 text-sm text-blue-400 bg-blue-950 md:block">
                   {city.city}, {city.country}
                 </p>
               </div>
@@ -93,6 +93,3 @@ function Cities() {
 }
 
 export default Cities;
-
-
-
