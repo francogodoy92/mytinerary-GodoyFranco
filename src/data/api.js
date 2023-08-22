@@ -1,37 +1,23 @@
-const API_BASE_URL = "http://localhost:3000/api/";
+const api_url = "http://localhost:3000/api/";
 
 export async function fetchCities(searchTerm) {
   try {
-    const response = await fetch(`${API_BASE_URL}/cities?search=${searchTerm}`);
+    const response = await fetch(`${api_url}/cities?search=${searchTerm}`);
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Error loading cities:", error);
+    console.error("Error loading your cities:", error);
     throw error;
   }
 }
 
 export async function fetchCityById(id) {
   try {
-    const response = await fetch(`${API_BASE_URL}/cities/${id}`);
+    const response = await fetch(`${api_url}/cities/${id}`);
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Error loading city by ID:", error);
+    console.error("Error loading your city:", error);
     throw error;
   }
 }
-
-/* const API_BASE_URL = "http://localhost:3000/api/"; 
-
-export async function fetchCities(searchTerm) {
-  try {
-    const response = await fetch(`${API_BASE_URL}/cities?search=${searchTerm}`);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error loading cities:", error);
-    throw error;
-  }
-}
- */
