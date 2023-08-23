@@ -25,7 +25,7 @@ function Cities() {
 
   const handleSearch = () => {
     const filteredCities = cities.filter((city) =>
-      city.city.toLowerCase().startsWith(searchTerm.toLowerCase())
+      city.city.toLowerCase().trim().startsWith(searchTerm.toLowerCase().trim())
     );
     return filteredCities;
   };
