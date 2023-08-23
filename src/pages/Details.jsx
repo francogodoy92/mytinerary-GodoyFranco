@@ -43,9 +43,9 @@ function Details() {
       <div className="flex flex-col gap-3 items-center">
         <p className="text-3xl text-center font-bold py-2">
           {city.city}, {city.country}
-        </p>
+        </p>className={`${isExpanded ? 'h-[70vh] w-[90vw] absolute object-cover' : 'h-80 w-[50vw] object-fill'}  rounded-lg shadow-2xl border-4 border-blue-950 cursor-pointer`}
         <img
-          className={`h-${isExpanded ? 'full' : '80'} w-${isExpanded ? 'full' : '[30vw]'} object-${isExpanded ? 'contain' : 'fill'} rounded-lg shadow-2xl border-4 border-blue-950 cursor-pointer`}
+          
           src={city.photo}
           title={city.featuredLocation}
           alt={city.city}

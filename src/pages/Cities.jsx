@@ -20,32 +20,28 @@ function Cities() {
       })
       .catch((error) => {
         console.error("Error reading cities:", error);
-      });
-  }, []);
+      })
+  }, [])
 
-  const handleSearch = () => {
-    const filteredCities = cities.filter((city) =>
-      city.city.toLowerCase().trim().startsWith(searchTerm.toLowerCase().trim())
-    );
-    return filteredCities;
-  };
+  const filteredCities = cities.filter((city) =>
+  city.city.toLowerCase().trim().startsWith(searchTerm.toLowerCase().trim()))
 
   const previousPage = () => {
     setCurrentPage((prevPage) =>
       prevPage === 0 ? totalPages - 1 : prevPage - 1
     );
-  };
+  }
 
   const nextPage = () => {
     setCurrentPage((prevPage) =>
       prevPage === totalPages - 1 ? 0 : prevPage + 1
     );
-  };
+  }
 
   const getDisplayedCities = () => {
     const startIndex = currentPage * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    return handleSearch().slice(startIndex, endIndex);
+    return filteredCities.slice(startIndex, endIndex)
   };
 
   return (
@@ -60,6 +56,7 @@ function Cities() {
       <div className="flex justify-evenly w-screen items-center">
         <Arrow item={"⪡"} onClick={previousPage} />
         <div className="flex flex-wrap gap-6 justify-center items-center">
+          <h1 className={`${filteredCities.length < 1 ? 'text-2xl':'hidden'}`}>Not cities found! 😢</h1>
           {getDisplayedCities().map((city, index) => (
             <Link to={`/details/${city._id}`} key={index}>
               <div
