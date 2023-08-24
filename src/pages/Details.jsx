@@ -39,7 +39,7 @@ function Details() {
   };
 
   return (
-    <div className="min-h-[85vh]  px-20 py-5">
+    <div className="min-h-[80vh]  px-20 py-5">
       <div className="flex flex-col gap-3 items-center">
         <p className="text-3xl text-center font-bold py-2">
           {city.city}, {city.country}
