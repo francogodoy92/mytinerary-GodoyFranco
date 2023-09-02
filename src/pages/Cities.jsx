@@ -2,29 +2,25 @@ import React, { useState, useEffect } from "react";
 import "../index.css";
 import Arrow from "../components/Arrow";
 import Indice from "../components/Indice";
-import { fetchCities } from "../data/api";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { readAllCities, filterCities } from "../Redux/actions/citiesAction.js";
 
 function Cities() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [cities, setCities] = useState([]);
+  const dispatch = useDispatch();
+  const filteredCities = useSelector(store => store.readAllCitiesReducer.filteredCities)
+
+
+  //Pagination
   const itemsPerPage = 4;
   const [currentPage, setCurrentPage] = useState(0);
-  const totalPages = Math.ceil(cities.length / itemsPerPage);
+  const totalPages = Math.ceil(filteredCities.length / itemsPerPage);
 
-  useEffect(() => {
-    fetchCities()
-      .then((data) => {
-        const citiesFromApi = data.response;
-        setCities(citiesFromApi);
-      })
-      .catch((error) => {
-        console.error("Error reading cities:", error);
-      })
-  }, [])
-
-  const filteredCities = cities.filter((city) =>
-  city.city.toLowerCase().trim().startsWith(searchTerm.toLowerCase().trim()))
+  useEffect(()=>{
+    dispatch(readAllCities())
+  },
+  []
+  )
 
   const previousPage = () => {
     setCurrentPage((prevPage) =>
@@ -50,8 +46,7 @@ function Cities() {
         type="text"
         placeholder="Search your city!"
         className="mb-10 px-2 py-1 border border-gray-300 shadow-sm rounded-md focus:outline-none w-auto focus:border-blue-400"
-        value= {searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={(e) => dispatch(filterCities(e.target.value))}
       />
       <div className="flex justify-evenly w-screen items-center">
         <Arrow item={"⪡"} onClick={previousPage} />

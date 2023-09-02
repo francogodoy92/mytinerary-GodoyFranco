@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchCities } from "../data/api"; 
 import { Link } from "react-router-dom";
+import Itinerary from "../components/Itinerary";
 
 function Details() {
   const { id } = useParams();
@@ -51,6 +52,7 @@ function Details() {
           alt={city.city}
           onClick={toggleImage}
         />
+        <Itinerary data={data.name = "Pepe"}/>
         <p className="text-3xl text-center py-5">🛠️Under construction🛠️</p>
       </div>
       <Link to="/Cities" className="flex items-end justify-end">

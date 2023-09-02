@@ -4,7 +4,7 @@ export async function fetchCities(searchTerm) {
   try {
     const response = await fetch(`${api_url}/cities?search=${searchTerm}`);
     const data = await response.json();
-    return data;
+    return data.response;
   } catch (error) {
     console.error("Error loading your cities:", error);
     throw error;
