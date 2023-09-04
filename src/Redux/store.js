@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { readAllCitiesReducer } from "./reducers/citiesReducer.js";
+import { readAllCitiesReducer, readOneCityReducer, readItinerariesByCityReducer } from "./reducers/citiesReducer.js";
 
 const store = configureStore({
   reducer: {
     readAllCitiesReducer: readAllCitiesReducer,
+    readOneCityReducer: readOneCityReducer,
+    readItinerariesByCityReducer: readItinerariesByCityReducer,    
   },
 });
 

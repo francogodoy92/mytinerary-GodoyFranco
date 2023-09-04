@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { readAllCities, filterCities } from "../actions/citiesAction.js";
+import { readAllCities, filterCities, readOneCity, readItinerariesByCity} from "../actions/citiesAction.js";
 
 const initialState = {
   cities: [],
@@ -29,3 +29,21 @@ export const readAllCitiesReducer = createReducer(initialState, (builder) => {
   })
 });
 
+export const readOneCityReducer = createReducer(initialState, (builder) => {
+  builder
+
+  .addCase(readOneCity.fulfilled, (store,action)=>{
+        return {
+                ...store,
+                city: action.payload
+        }
+  })
+});
+
+export const readItinerariesByCityReducer = createReducer(initialState, (builder)=> {
+  builder
+      .addCase(readItinerariesByCity.fulfilled, (store,action)=>{
+          const newItineraries = { ...store, itineraries: action.payload}
+          return newItineraries
+      })
+})

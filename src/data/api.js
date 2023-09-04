@@ -13,11 +13,13 @@ export async function fetchCities(searchTerm) {
 
 export async function fetchCityById(id) {
   try {
-    const response = await fetch(`${api_url}/cities/${id}`);
+    const response = await fetch(`${api_url}/cities/id/${id}`);
     const data = await response.json();
-    return data;
+    return data.response
   } catch (error) {
     console.error("Error loading your city:", error);
     throw error;
   }
 }
+
+export default api_url
