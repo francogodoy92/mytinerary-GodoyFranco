@@ -24,7 +24,7 @@ function Details() {
   }, []);
 
   return (
-    <div className="min-h-[80vh]  px-20 py-5">
+    <div className="min-h-[82.6vh]  px-20 py-5">
       <div className="flex flex-col gap-3 items-center">
         {city ? (
           <div className="mb-12">

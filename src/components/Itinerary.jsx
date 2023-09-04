@@ -16,7 +16,10 @@ const Itinerary = ({ data }) => {
         className="w-80 max-h-40 rounded-md shadow-md border object-cover"
       />
       <div className="flex flex-col gap-2">
-        <h1 className="text-xl font-bold text-center">{data.name}</h1>
+        <div className="flex justify-between items-end">
+          <p className="text-xl font-bold text-center">{data.name}</p>
+          <p className="font-medium text-center"><span className="text-black">Likes: </span>{data.likes}</p>
+        </div>
         <div className="flex align-center gap-2 items-center">
           <img
             src={data.authorPhoto}
