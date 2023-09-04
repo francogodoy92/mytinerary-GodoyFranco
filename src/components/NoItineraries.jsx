@@ -1,7 +1,7 @@
 const NoItineraries = () => {
     return (
 <div>
-                <h3>There are currently no itineraries available for this city</h3>
+                <p className="text-2xl">There are currently no itineraries available for this city</p>
         </div>
     )
 }
