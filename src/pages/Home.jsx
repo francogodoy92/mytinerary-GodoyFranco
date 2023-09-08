@@ -5,7 +5,7 @@ import Hero from "../components/Hero";
 function Home() {
   return (
     <>
-      <div className="min-h-[85vh] w-screen"  >
+      <div className="min-h-[85vh] "  >
         <Hero />        
       </div>
     </>

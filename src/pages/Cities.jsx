@@ -48,7 +48,7 @@ function Cities() {
         className="mb-10 px-2 py-1 border border-gray-300 shadow-sm rounded-md focus:outline-none w-auto focus:border-blue-400"
         onChange={(e) => dispatch(filterCities(e.target.value))}
       />
-      <div className="flex justify-evenly w-screen items-center">
+      <div className="flex justify-evenly  items-center">
         <Arrow item={"⪡"} onClick={previousPage} />
         <div className="flex flex-wrap gap-6 justify-center items-center">
           <h1 className={`${filteredCities.length < 1 ? 'text-2xl':'hidden'}`}>Not cities found! 😢</h1>
