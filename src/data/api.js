@@ -22,4 +22,15 @@ export async function fetchCityById(id) {
   }
 }
 
+export async function fetchCityByName(name) {
+  try {
+    const response = await fetch(`${api_url}/cities/city/${name}`);
+    const data = await response.json();
+    return data.response
+  } catch (error) {
+    console.error("Error loading your city:", error);
+    throw error;
+  }
+}
+
 export default api_url

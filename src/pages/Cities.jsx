@@ -53,7 +53,7 @@ function Cities() {
         <div className="flex flex-wrap gap-6 justify-center items-center">
           <h1 className={`${filteredCities.length < 1 ? 'text-2xl':'hidden'}`}>Not cities found! 😢</h1>
           {getDisplayedCities().map((city, index) => (
-            <Link to={`/details/${city._id}`} key={index}>
+            <Link to={`/details/${city.city}`} key={index}>
               <div
                 key={index}
                 className="rounded-md shadow-lg shadow-blue-950 overflow-hidden border-2 border-t-blue-950 border-r-blue-700 border-b-blue-500 border-l-blue-300"
