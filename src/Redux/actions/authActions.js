@@ -6,8 +6,9 @@ import localStor from "../../data/localStorage";
 
 
 export const userSignUp = createAsyncThunk('userSignUp', async (userData)=>{
+    console.log(userData)
     try {
-        const res = await axios.post(api_url+'auth/signup',{
+        const res = await axios.post(api_url+'auth/signup', {
             ...userData
         })
         return res.data

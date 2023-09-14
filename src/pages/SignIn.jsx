@@ -24,8 +24,8 @@ const SignIn = () => {
                 }
             })
             const userData = {
-                email: infoUser.data.email,
-                password: infoUser.data.family_name
+              email: infoUser.data.email,
+              password: infoUser.data.family_name + "1#A"
             }
             dispatch(userSignIn(userData))
             toast.success('Logged with Google!');

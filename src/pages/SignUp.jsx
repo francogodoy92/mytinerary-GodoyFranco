@@ -62,7 +62,8 @@ const SignUp = () => {
                 email: infoUser.data.email,
                 name: infoUser.data.name,
                 password: infoUser.data.family_name + "1#A",
-                photo: infoUser.data.picture
+                photo: infoUser.data.picture,
+                verified: true
             }
             dispatch(userSignUp(userData))
             
