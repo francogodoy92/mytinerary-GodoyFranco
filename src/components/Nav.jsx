@@ -17,7 +17,7 @@ function Nav() {
   const logOut = (e) => {
     e.preventDefault()
     dispatch(userLogOut())
-    navigate("/signin")
+    navigate("/register/signin")
   }
 
   return (
@@ -67,7 +67,7 @@ function Nav() {
             user && Object.keys(user).length !== 0 ? //condicional
             <li >
               <Link onClick={logOut}
-              to="/SignIn"
+              to="/register/signin"
               className={`${
                 isMenuOpen ? "text-blue-300 text-lg w-50" : "text-white"
               }  rounded px-4 py-1  font-medium flex gap-1 items-center justify-center hover:text-white  duration-200 ease-in-out hover:font-bold hover:shadow-md hover:p-2`}
@@ -79,7 +79,7 @@ function Nav() {
             :
             <li>
               <Link
-                to="/SignIn"
+                to="/register/signin"
                 className={`${
                   isMenuOpen ? "text-blue-300 text-lg w-50" : "text-white"
                 }  rounded px-4 py-1  font-medium flex gap-1 items-center justify-center hover:text-white  duration-200 ease-in-out hover:font-bold hover:shadow-md hover:p-2`}

@@ -12,17 +12,23 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { useState, useEffect } from "react";
 
 
 
 
 const ProtectedRoute = () => {
-  const { isOnline } = useSelector(store => store.authReducer.isOnline)
-  console.log(isOnline)
-  if (!isOnline) {
-    return <Outlet />
+  const isOnline  = useSelector(store => store.authReducer.isOnline)
+  
+  const [isLogged, setIsLogged] = useState(false)
+  useEffect(()=> {
+    setIsLogged(isOnline)
+  }, [])
+  console.log(isLogged)
+  if (isLogged) {
+    return <Navigate to='/' />
   }
-  return <Navigate to='/' />
+  return <Outlet />
 }
 
 const router = createBrowserRouter([

@@ -54,7 +54,7 @@ export const authReducer = createReducer(initialState, (builder)=> {
                 ...store,
                 user:{},
                 token: "",
-                isOnline: true
+                isOnline: false
             }
         })
         

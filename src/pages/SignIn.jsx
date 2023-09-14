@@ -72,7 +72,7 @@ const SignIn = () => {
             <button className="button1 bg-blue-800 text-white py-2 px-4 rounded-md mt-4 transition duration-300 hover:bg-blue-300 hover:text-black" type="submit">Login</button>
             <div className="btn flex justify-center mt-4">
               <button className="button1 bg-blue-800 text-white py-2 px-4 rounded-md mr-2 transition duration-300 hover:bg-blue-300 hover:text-black" onClick={() => loginWithGoogle()} type="button">Log In with Google</button>
-              <button className="button2 bg-blue-800 text-white py-2 px-4 rounded-md transition duration-300 hover:bg-blue-300 hover:text-black" onClick={() => navigate('/signup')}>Don't have an account?</button>
+              <button className="button2 bg-blue-800 text-white py-2 px-4 rounded-md transition duration-300 hover:bg-blue-300 hover:text-black" onClick={() => navigate('/register/signup')}>Don't have an account?</button>
             </div>
             <button className="button3 bg-blue-800 text-white py-2 px-4 rounded-md mt-4 transition duration-300 hover:bg-blue-300 hover:text-black">Forgot Password?</button>
           </form>

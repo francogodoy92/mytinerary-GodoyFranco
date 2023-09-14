@@ -93,7 +93,7 @@ const SignUp = () => {
           <input type="password" value={userData.password} onChange={handleChange} name="password" className="field bg-gray-200 text-blue-500" placeholder="Password" />
         </div>
         <div className="btn flex justify-center mt-4">
-          <button className=" bg-blue-800 text-white py-2 px-4 rounded-md mr-2 transition duration-300 hover:bg-blue-300 hover:text-black" onClick={() => navigate('/signin')}>
+          <button className=" bg-blue-800 text-white py-2 px-4 rounded-md mr-2 transition duration-300 hover:bg-blue-300 hover:text-black" onClick={() => navigate('/register/signin')}>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </button>
           <button className=" bg-blue-800 text-white py-2 px-4 rounded-md transition duration-300 hover:bg-blue-300 hover:text-black" onClick={handleSubmit}>

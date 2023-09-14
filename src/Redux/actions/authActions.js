@@ -52,7 +52,7 @@ export const logInWithToken = createAsyncThunk('logInWithToken', async ()=>{
         return res.data
     } catch (error) {
         console.log(error);
-        return {}
+        throwNewError(error)
     }
 })
 
