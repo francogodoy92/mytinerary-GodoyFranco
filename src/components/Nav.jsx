@@ -54,7 +54,7 @@ function Nav() {
           </li>
           <li>
             <Link
-              to="/Login"
+              to="/SignIn"
               className={`${
                 isMenuOpen ? "text-blue-300 text-lg w-50" : "text-white"
               }  rounded px-4 py-1  font-medium flex gap-1 items-center justify-center hover:text-white  duration-200 ease-in-out hover:font-bold hover:shadow-md hover:p-2`}
