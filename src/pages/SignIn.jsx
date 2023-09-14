@@ -16,19 +16,19 @@ const SignIn = () => {
     const password = useRef()
 
     const loginWithGoogle = useGoogleLogin ({
-        onSuccess: async token => {
-            console.log(token)
+        onSuccess: async tokenResponse => {
+            console.log(tokenResponse)
             const infoUser = await axios.get('https://www.googleapis.com/oauth2/v3/userinfo', {
                 headers: {
-                    Authorization: 'Bearer '+ token.access_token
+                    Authorization: 'Bearer '+ tokenResponse.access_token
                 }
             })
-            const data = {
+            const userData = {
                 email: infoUser.data.email,
-                password: infoUser.data.family_name+"@1V",
+                password: infoUser.data.family_name,
             }
-            dispatch(userSignIn(data))
-
+            dispatch(userSignIn(userData))
+            toast.success('Logged with Google!');
             navigate('/')
         }
     });
