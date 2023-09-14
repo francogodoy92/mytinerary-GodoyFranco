@@ -13,6 +13,7 @@ export const authReducer = createReducer(initialState, (builder)=> {
     builder
         .addCase(userSignUp.fulfilled, (store,action)=>{
             localStor.set("token", action.payload.token)
+            toast.success('User created!');
             return {
                 ...store,
                 user: action.payload.response,

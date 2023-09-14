@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import api_url from '../data/api';
+import jwtDecode from 'jwt-decode';
 
 const SignUp = () => {
     const dispatch = useDispatch();
@@ -47,7 +48,28 @@ const SignUp = () => {
           toast.error("An error occurred while registering.");
         }
       }
-  
+      
+      const loginWithGoogle = useGoogleLogin ({
+        onSuccess: async tokenResponse => {
+            console.log(tokenResponse)
+            const infoUser = await axios.get('https://www.googleapis.com/oauth2/v3/userinfo', {
+                headers: {
+                    Authorization: 'Bearer '+ tokenResponse.access_token
+                }
+            })
+            console.log(infoUser)
+            const userData = {
+                email: infoUser.data.email,
+                name: infoUser.data.name,
+                password: infoUser.data.family_name + "1#A",
+                photo: infoUser.data.picture
+            }
+            dispatch(userSignUp(userData))
+            
+            navigate('/')
+        }
+    });
+
     return (
       <div className="w-full flex justify-center items-center h-screen bg-blue-800"> 
   <div className="card">
@@ -76,6 +98,9 @@ const SignUp = () => {
           <button className=" bg-blue-800 text-white py-2 px-4 rounded-md transition duration-300 hover:bg-blue-300 hover:text-black" onClick={handleSubmit}>
             Sign Up
           </button>
+
+          <button className="button1 bg-blue-800 text-white py-2 px-4 rounded-md mr-2 transition duration-300 hover:bg-blue-300 hover:text-black" onClick={() => loginWithGoogle()} type="button">Sign Up with Google</button>
+        
         </div>
         <button className=" bg-blue-800 text-white py-2 px-4 rounded-md mt-4 transition duration-300 hover:bg-red-400 hover:text-black">Forgot Password?</button>
       </form>
