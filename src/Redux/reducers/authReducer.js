@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { userSignIn, userLogOut, userSignUp, logInWithToken } from "../actions/authActions";
+import { userSignIn, userSignUp, logInWithToken } from "../actions/authActions";
 import localStor from "../../data/localStorage";
 
 const initialState = {
@@ -36,13 +36,5 @@ export const authReducer = createReducer(initialState, (builder)=> {
                 isOnline: true
             }
         })
-        .addCase(userLogOut, (store)=>{
-            localStor.remove("token")
-            return {
-                ...store,
-                user: {},
-                token: "",
-                isOnline: false
-            }
-        })
+        
 })

@@ -50,9 +50,5 @@ export const logInWithToken = createAsyncThunk('logInWithToken', async ()=>{
     }
 })
 
-export const userLogOut = createAction('userLogOut', ()=>{
-    return {
-        payload: ""
-    }
-})
+
 
