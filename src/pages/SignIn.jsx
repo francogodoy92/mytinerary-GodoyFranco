@@ -33,34 +33,44 @@ const SignIn = () => {
         }
     });
 
+
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const userData = {
-                email: email.current.value,
-                password: password.current.value
-            };
+      e.preventDefault();
+      dispatch(userSignIn({
+          email: email.current.value,
+          password: password.current.value
+      }))
+      toast.success('Logged in successfully')
+      navigate('/')
+  }
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //         const userData = {
+    //             email: email.current.value,
+    //             password: password.current.value
+    //         };
     
-            const response = await dispatch(userSignIn(userData));
+    //         const response = await dispatch(userSignIn(userData));
     
-            if (response && response.success) {
+    //         if (response && response.success) {
                 
-                toast.success('Logged in successfully');
-                navigate('/');
-            } else {
+    //             toast.success('Logged in successfully');
+    //             navigate('/');
+    //         } else {
                 
-                if (response && response.message) {
-                    toast.error(response.message);
-                } else {
-                    toast.error('Login failed. Please check your credentials.');
-                }
-            }
-        } catch (error) {
-            console.error(error);
+    //             if (response && response.message) {
+    //                 toast.error(response.message);
+    //             } else {
+    //                 toast.error('Login failed. Please check your credentials.');
+    //             }
+    //         }
+    //     } catch (error) {
+    //         console.error(error);
          
-            toast.error('An error occurred while logging in.');
-        }
-    };
+    //         toast.error('An error occurred while logging in.');
+    //     }
+    // };
     
     return (
         <div className="w-full flex justify-center items-center h-screen bg-blue-800"> 
@@ -80,7 +90,7 @@ const SignIn = () => {
               </svg>
               <input type="password" ref={password} name="password" className="field bg-gray-200 text-blue-500" placeholder="Password" />
             </div>
-            <button className="button1 bg-blue-800 text-white py-2 px-4 rounded-md mt-4 transition duration-300 hover:bg-blue-300 hover:text-black">Login</button>
+            <button className="button1 bg-blue-800 text-white py-2 px-4 rounded-md mt-4 transition duration-300 hover:bg-blue-300 hover:text-black" onClick={handleSubmit}>Login</button>
             <div className="btn flex justify-center mt-4">
               <button className="button1 bg-blue-800 text-white py-2 px-4 rounded-md mr-2 transition duration-300 hover:bg-blue-300 hover:text-black" onClick={() => loginWithGoogle()} type="button">Log In with Google</button>
               <button className="button2 bg-blue-800 text-white py-2 px-4 rounded-md transition duration-300 hover:bg-blue-300 hover:text-black" onClick={() => navigate('/signup')}>Don't have an account?</button>

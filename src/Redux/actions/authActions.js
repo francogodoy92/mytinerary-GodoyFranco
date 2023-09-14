@@ -2,6 +2,7 @@ import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 import api_url from "../../data/api";
 import axios from "axios";
 import localStor from "../../data/localStorage";
+import { toast } from 'react-toastify'
 
 
 export const userSignUp = createAsyncThunk('userSignUp', async (userData)=>{
@@ -25,6 +26,7 @@ export const userSignIn = createAsyncThunk('userSignIn', async (userData) => {
             return response.data;
         } else {
             return { error: response.data.message };
+            toast.error('Login failed. Please check your credentials.');
         }
     } catch (error) {
         console.error(error);
