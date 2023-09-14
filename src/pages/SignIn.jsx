@@ -25,7 +25,7 @@ const SignIn = () => {
             })
             const userData = {
                 email: infoUser.data.email,
-                password: infoUser.data.family_name,
+                password: infoUser.data.family_name
             }
             dispatch(userSignIn(userData))
             toast.success('Logged with Google!');
@@ -33,17 +33,22 @@ const SignIn = () => {
         }
     });
 
-
-
     const handleSubmit = async (e) => {
       e.preventDefault();
-      dispatch(userSignIn({
+      try {
+        const userData = {
           email: email.current.value,
-          password: password.current.value
-      }))
-      toast.success('Logged in successfully')
-      navigate('/')
-  }
+          password: password.current.value,
+        };
+  
+        dispatch(userSignIn(userData));
+        navigate('/');
+        
+      } catch (error) {
+        console.error(error);
+        toast.error('An error occurred while logging in.');
+      }
+    };
 
     
     return (
@@ -64,7 +69,7 @@ const SignIn = () => {
               </svg>
               <input type="password" ref={password} name="password" className="field bg-gray-200 text-blue-500" placeholder="Password" />
             </div>
-            <button className="button1 bg-blue-800 text-white py-2 px-4 rounded-md mt-4 transition duration-300 hover:bg-blue-300 hover:text-black" onClick={handleSubmit}>Login</button>
+            <button className="button1 bg-blue-800 text-white py-2 px-4 rounded-md mt-4 transition duration-300 hover:bg-blue-300 hover:text-black" type="submit">Login</button>
             <div className="btn flex justify-center mt-4">
               <button className="button1 bg-blue-800 text-white py-2 px-4 rounded-md mr-2 transition duration-300 hover:bg-blue-300 hover:text-black" onClick={() => loginWithGoogle()} type="button">Log In with Google</button>
               <button className="button2 bg-blue-800 text-white py-2 px-4 rounded-md transition duration-300 hover:bg-blue-300 hover:text-black" onClick={() => navigate('/signup')}>Don't have an account?</button>
