@@ -34,6 +34,7 @@ const SignIn = () => {
     });
 
 
+
     const handleSubmit = async (e) => {
       e.preventDefault();
       dispatch(userSignIn({
@@ -43,34 +44,7 @@ const SignIn = () => {
       toast.success('Logged in successfully')
       navigate('/')
   }
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         const userData = {
-    //             email: email.current.value,
-    //             password: password.current.value
-    //         };
-    
-    //         const response = await dispatch(userSignIn(userData));
-    
-    //         if (response && response.success) {
-                
-    //             toast.success('Logged in successfully');
-    //             navigate('/');
-    //         } else {
-                
-    //             if (response && response.message) {
-    //                 toast.error(response.message);
-    //             } else {
-    //                 toast.error('Login failed. Please check your credentials.');
-    //             }
-    //         }
-    //     } catch (error) {
-    //         console.error(error);
-         
-    //         toast.error('An error occurred while logging in.');
-    //     }
-    // };
+
     
     return (
         <div className="w-full flex justify-center items-center h-screen bg-blue-800"> 

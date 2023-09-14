@@ -19,13 +19,13 @@ export const userSignUp = createAsyncThunk('userSignUp', async (userData)=>{
 
 export const userSignIn = createAsyncThunk('userSignIn', async (userData) => {
     try {
-        const response = await axios.post(api_url + 'auth/signin', { ...userData });
+        const res = await axios.post(api_url + 'auth/signin', { ...userData });
 
 
-        if (response.data.success) {
-            return response.data;
+        if (res.data.success) {
+            return res.data;
         } else {
-            return { error: response.data.message };
+            return { error: res.data.message };
             toast.error('Login failed. Please check your credentials.');
         }
     } catch (error) {
