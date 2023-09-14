@@ -16,7 +16,7 @@ export const authReducer = createReducer(initialState, (builder)=> {
             toast.success('User created!');
             return {
                 ...store,
-                user: action.payload.response,
+                user: action.payload.userData,
                 token: action.payload.token,
                 isOnline: true
             }
