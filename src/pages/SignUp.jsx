@@ -49,12 +49,12 @@ const SignUp = () => {
       }
   
     const login = useGoogleLogin({
-      onSuccess: async (tokenResponse) => {
+      onSuccess: async (token) => {
         const infoUser = await axios.get(
           'https://www.googleapis.com/oauth2/v3/userinfo',
           {
             headers: {
-              Authorization: 'Bearer ' + tokenResponse.access_token,
+              Authorization: 'Bearer ' + token.access_token,
             },
           }
         );
