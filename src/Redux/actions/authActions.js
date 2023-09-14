@@ -49,7 +49,6 @@ export const logInWithToken = createAsyncThunk('logInWithToken', async ()=>{
                 Authorization: 'Bearer ' + token
             }
         })
-        console.log(res.data)
         return res.data
     } catch (error) {
         console.log(error);

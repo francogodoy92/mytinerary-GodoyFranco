@@ -49,5 +49,13 @@ export const authReducer = createReducer(initialState, (builder)=> {
                 isOnline: true
             }
         })
+        .addCase(logInWithToken.pending, (store,action)=>{
+            return {
+                ...store,
+                user:{},
+                token: "",
+                isOnline: true
+            }
+        })
         
 })
