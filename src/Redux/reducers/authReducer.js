@@ -44,7 +44,7 @@ export const authReducer = createReducer(initialState, (builder)=> {
         .addCase(logInWithToken.fulfilled, (store,action)=>{
             return {
                 ...store,
-                user: action.payload.response,
+                user: action.payload.userData,
                 token: action.payload.token,
                 isOnline: true
             }
