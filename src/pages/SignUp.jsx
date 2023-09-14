@@ -48,26 +48,6 @@ const SignUp = () => {
         }
       }
   
-    const login = useGoogleLogin({
-      onSuccess: async (token) => {
-        const infoUser = await axios.get(
-          'https://www.googleapis.com/oauth2/v3/userinfo',
-          {
-            headers: {
-              Authorization: 'Bearer ' + token.access_token,
-            },
-          }
-        );
-        const data = {
-          email: infoUser.data.email,
-          password: infoUser.data.family_name + "@1V",
-          name: infoUser.data.name,
-        };
-        dispatch(userSignUp(data));
-        navigate('/');
-      },
-    });
-  
     return (
       <div className="w-full flex justify-center items-center h-screen bg-blue-800"> 
   <div className="card">
