@@ -8,7 +8,7 @@ const initialState = {
     isOnline: false
 }
 
-export const userSignUpReducer = createReducer(initialState, (builder)=> {
+export const authReducer = createReducer(initialState, (builder)=> {
     builder
         .addCase(userSignUp.fulfilled, (store,action)=>{
             localStor.set("token", action.payload.token)
