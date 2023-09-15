@@ -72,7 +72,7 @@ function Nav() {
                 isMenuOpen ? "text-blue-300 text-lg w-50" : "text-white"
               }  rounded px-4 py-1  font-medium flex gap-1 items-center justify-center hover:text-white  duration-200 ease-in-out hover:font-bold hover:shadow-md hover:p-2`}
             >
-              <img className="w-4 h-4 rounded-full" src={user.photo} alt={user.name} />
+              <img className="w-6 h-6 rounded-full" src={user.photo} alt={user.name} />
               Logout
             </Link>
             </li>
