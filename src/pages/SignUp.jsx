@@ -126,8 +126,10 @@ const SignUp = () => {
           <button className="button1 bg-blue-800 text-white py-2 px-4 rounded-md mr-2 transition duration-300 hover:bg-blue-300 hover:text-black" onClick={() => loginWithGoogle()} type="button">Sign Up with Google</button>
         
         </div>
-        <button className=" bg-blue-800 text-white py-2 px-4 rounded-md mt-4 transition duration-300 hover:bg-red-400 hover:text-black">Forgot Password?</button>
       </form>
+      <div className='flex justify-end'>
+        <button className=" bg-blue-500 text-white py-2 px-4 rounded-md mt-4 transition duration-300 hover:bg-red-400 hover:text-black">Forgot Password?</button>
+      </div>
     </div>
   </div>
 </div>
