@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import api_url from '../data/api';
+import countries from '../data/countries';
 
 
 const SignUp = () => {
@@ -16,9 +17,16 @@ const SignUp = () => {
       email: "",
       password: "",
       name: "",
-
     }); 
   
+    const handleCountryChange = (e) => {
+      setSelectedCountry(e.target.value);
+      setUserData({ ...userData, country: e.target.value });
+    };
+    const [selectedCountry, setSelectedCountry] = useState('');
+    
+    
+
     const handleChange = (e) => {
       setUserData({ ...userData, [e.target.name]: e.target.value });
     };
@@ -37,7 +45,7 @@ const SignUp = () => {
           if (response.data.success) {
        
             toast.success('Your user has been created')
-            navigate('/');
+            navigate('/register/signin');
           } else {
             
             toast.error("Registration failed. Please check your information.");
@@ -92,6 +100,21 @@ const SignUp = () => {
             <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
           </svg>
           <input type="password" value={userData.password} onChange={handleChange} name="password" className="field bg-gray-200 text-blue-500" placeholder="Password" />
+        </div>
+        <div className="field flex items-center justify-center gap-2 rounded-lg p-2 bg-gray-200">
+          <select
+            value={selectedCountry}
+            onChange={handleCountryChange}
+            name="country"
+            className="field bg-gray-200 text-blue-500"
+          >
+            <option value="">Select your country</option>
+            {countries.map((country, index) => (
+              <option key={index} value={country}>
+                {country}
+              </option>
+            ))}
+          </select>
         </div>
           <button className=" bg-blue-800 text-white py-2 px-4 rounded-md transition duration-300 hover:bg-blue-300 hover:text-black" onClick={handleSubmit}>
             Sign Up
