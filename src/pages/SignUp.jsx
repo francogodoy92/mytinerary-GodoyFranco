@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import api_url from '../data/api';
-import jwtDecode from 'jwt-decode';
+
 
 const SignUp = () => {
     const dispatch = useDispatch();
